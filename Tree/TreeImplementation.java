@@ -15,7 +15,7 @@ public class TreeImplementation {
     }
 
 
-// Tree Creation
+    // Tree Creation
     static int index=-1;
     public static Node createTree(int[] nodes){
         index++;
@@ -30,16 +30,46 @@ public class TreeImplementation {
     }
 
 
-// Tree Traversal
-    public static void traversal(Node root) {
+    // Preorder Tree Traversal
+    public static void preorder(Node root) {
         if(root == null) {
-            System.out.print(-1 + " ");
+            System.out.print(-1+" ");
             return;
         }
-        System.out.print(root.data + " ");
-        traversal(root.left);
-        traversal(root.right);
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
     }
+
+
+    // postorder Tree Traversal
+    public static void postorder(Node root) {
+        if(root == null) {
+            System.out.print(-1+" ");
+            return;
+        }
+        postorder(root.left);
+        postorder(root.right);
+        System.out.print(root.data+" ");
+    }
+
+
+    // inorder Tree Traversal
+    public static void inorder(Node root) {
+        if(root == null) {
+            System.out.print(-1+" ");
+            return;
+        }
+        inorder(root.left);
+        System.out.print(root.data+" ");
+        inorder(root.right);
+    }
+
+
+    // levelOrder Tree Traversal
+
+
+
 
 
     public static void main(String[] args) {
@@ -47,10 +77,7 @@ public class TreeImplementation {
 
         Node root=createTree(nodes);
 
-        System.out.println(root.data);
-
-        traversal(root);
-
+        postorder(root);
 
     }
 }
