@@ -1,5 +1,7 @@
 package Tree;
 
+import java.util.*;
+
 public class TreeImplementation {
 
     public static class Node{
@@ -67,6 +69,20 @@ public class TreeImplementation {
 
 
     // levelOrder Tree Traversal
+    public static void levelOrder(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()) {
+            Node currNode = queue.remove();
+            System.out.print(currNode.data+" ");
+            if(currNode.left != null)
+                queue.add(currNode.left);
+            if(currNode.right != null)
+                queue.add(currNode.right);
+        }
+    }
+
+
 
 
 
@@ -77,7 +93,7 @@ public class TreeImplementation {
 
         Node root=createTree(nodes);
 
-        postorder(root);
+        levelOrder(root);
 
     }
 }
