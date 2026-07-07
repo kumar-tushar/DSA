@@ -10,7 +10,7 @@ class Node {
 ```
 
 
-#### LinkedList
+##### LinkedList
 
 ```javascript
 class LinkedList {
