@@ -96,5 +96,17 @@ class LinkedList {
 
     return temp;
   }
+
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let temp = this.head;
+
+    for (i = 0; i < index; i++) {
+      temp = temp.next;
+    }
+    return temp;
+  }
 }
 ```
