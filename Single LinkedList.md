@@ -108,5 +108,31 @@ class LinkedList {
     }
     return temp;
   }
+
+ // Time Complexity: O(n)
+ // Space Complexity: O(1)
+ insert(index, value) {
+     if (index < 0 || index > this.length) return false;
+
+     if (index === 0) {
+         this.unshift(value);
+         return true;
+     }
+
+     if (index === this.length) {
+         this.push(value);
+         return true;
+     }
+
+     const newNode = new Node(value);
+     const prev = this.get(index - 1);
+
+     newNode.next = prev.next;
+     prev.next = newNode;
+
+     this.length++;
+     return true;
+ }
+
 }
 ```
