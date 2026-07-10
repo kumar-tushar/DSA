@@ -1,3 +1,4 @@
+````markdown
 ##### Node
 
 ```javascript
@@ -9,7 +10,6 @@ class Node {
 }
 ```
 
-
 ##### LinkedList
 
 ```javascript
@@ -20,7 +20,8 @@ class LinkedList {
     this.length = 0;
   }
 
-  // Time Complexity: O(1)
+  // Best Case Time Complexity: O(1)
+  // Worst Case Time Complexity: O(1)
   // Space Complexity: O(1)
   push(value) {
     const newNode = new Node(value);
@@ -37,7 +38,8 @@ class LinkedList {
     return this;
   }
 
-  // Time Complexity: O(n)
+  // Best Case Time Complexity: O(n)
+  // Worst Case Time Complexity: O(n)
   // Space Complexity: O(1)
   pop() {
     if (!this.head) return undefined;
@@ -62,7 +64,8 @@ class LinkedList {
     return temp;
   }
 
-  // Time Complexity: O(1)
+  // Best Case Time Complexity: O(1)
+  // Worst Case Time Complexity: O(1)
   // Space Complexity: O(1)
   unshift(value) {
     const newNode = new Node(value);
@@ -79,7 +82,8 @@ class LinkedList {
     return this;
   }
 
-  // Time Complexity: O(1)
+  // Best Case Time Complexity: O(1)
+  // Worst Case Time Complexity: O(1)
   // Space Complexity: O(1)
   shift() {
     if (!this.head) return undefined;
@@ -97,42 +101,64 @@ class LinkedList {
     return temp;
   }
 
-  // Time Complexity: O(n)
+  // Best Case Time Complexity: O(1)
+  // Worst Case Time Complexity: O(n)
   // Space Complexity: O(1)
   get(index) {
     if (index < 0 || index >= this.length) return null;
+
     let temp = this.head;
 
-    for (i = 0; i < index; i++) {
+    for (let i = 0; i < index; i++) {
       temp = temp.next;
     }
+
     return temp;
   }
 
- // Time Complexity: O(n)
- // Space Complexity: O(1)
- insert(index, value) {
-     if (index < 0 || index > this.length) return false;
+  // Best Case Time Complexity: O(1)
+  // Worst Case Time Complexity: O(n)
+  // Space Complexity: O(1)
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
 
-     if (index === 0) {
-         this.unshift(value);
-         return true;
-     }
+    if (index === 0) {
+      this.unshift(value);
+      return true;
+    }
 
-     if (index === this.length) {
-         this.push(value);
-         return true;
-     }
+    if (index === this.length) {
+      this.push(value);
+      return true;
+    }
 
-     const newNode = new Node(value);
-     const prev = this.get(index - 1);
+    const newNode = new Node(value);
+    const prev = this.get(index - 1);
 
-     newNode.next = prev.next;
-     prev.next = newNode;
+    newNode.next = prev.next;
+    prev.next = newNode;
 
-     this.length++;
-     return true;
- }
+    this.length++;
+    return true;
+  }
 
+  // Best Case Time Complexity: O(1)
+  // Worst Case Time Complexity: O(n)
+  // Space Complexity: O(1)
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const prev = this.get(index - 1);
+    const removed = prev.next;
+
+    prev.next = removed.next;
+    this.length--;
+
+    return removed;
+  }
 }
 ```
+````
