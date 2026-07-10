@@ -1,4 +1,3 @@
-````markdown
 ##### Node
 
 ```javascript
@@ -20,8 +19,7 @@ class LinkedList {
     this.length = 0;
   }
 
-  // Best Case Time Complexity: O(1)
-  // Worst Case Time Complexity: O(1)
+  // Time Complexity: O(1)
   // Space Complexity: O(1)
   push(value) {
     const newNode = new Node(value);
@@ -38,8 +36,7 @@ class LinkedList {
     return this;
   }
 
-  // Best Case Time Complexity: O(n)
-  // Worst Case Time Complexity: O(n)
+  // Time Complexity: O(n)
   // Space Complexity: O(1)
   pop() {
     if (!this.head) return undefined;
@@ -64,8 +61,7 @@ class LinkedList {
     return temp;
   }
 
-  // Best Case Time Complexity: O(1)
-  // Worst Case Time Complexity: O(1)
+  // Time Complexity: O(1)
   // Space Complexity: O(1)
   unshift(value) {
     const newNode = new Node(value);
@@ -82,8 +78,7 @@ class LinkedList {
     return this;
   }
 
-  // Best Case Time Complexity: O(1)
-  // Worst Case Time Complexity: O(1)
+  // Time Complexity: O(1)
   // Space Complexity: O(1)
   shift() {
     if (!this.head) return undefined;
@@ -101,8 +96,7 @@ class LinkedList {
     return temp;
   }
 
-  // Best Case Time Complexity: O(1)
-  // Worst Case Time Complexity: O(n)
+  // Time Complexity: O(n)
   // Space Complexity: O(1)
   get(index) {
     if (index < 0 || index >= this.length) return null;
@@ -116,8 +110,7 @@ class LinkedList {
     return temp;
   }
 
-  // Best Case Time Complexity: O(1)
-  // Worst Case Time Complexity: O(n)
+  // Time Complexity: O(n)
   // Space Complexity: O(1)
   insert(index, value) {
     if (index < 0 || index > this.length) return false;
@@ -142,8 +135,7 @@ class LinkedList {
     return true;
   }
 
-  // Best Case Time Complexity: O(1)
-  // Worst Case Time Complexity: O(n)
+  // Time Complexity: O(n)
   // Space Complexity: O(1)
   remove(index) {
     if (index < 0 || index >= this.length) return undefined;
@@ -161,4 +153,3 @@ class LinkedList {
   }
 }
 ```
-````
