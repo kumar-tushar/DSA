@@ -151,5 +151,26 @@ class LinkedList {
 
     return removed;
   }
+
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
+  reverse() {
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+
+    let next;
+    let prev = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = next;
+    }
+
+    return this;
+  }
+
 }
 ```
