@@ -41,12 +41,12 @@ class LinkedList {
   pop() {
     if (!this.head) return undefined;
 
-    let temp = this.head;
+    let current = this.head;
     let prev = this.head;
 
-    while (temp.next) {
-      prev = temp;
-      temp = temp.next;
+    while (current.next) {
+      prev = current;
+      current = current.next;
     }
 
     this.tail = prev;
@@ -58,7 +58,7 @@ class LinkedList {
       this.tail = null;
     }
 
-    return temp;
+    return current;
   }
 
   // Time Complexity: O(1)
