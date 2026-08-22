@@ -112,6 +112,17 @@ class LinkedList {
 
   // Time Complexity: O(n)
   // Space Complexity: O(1)
+  set(index, value) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
+
+  // Time Complexity: O(n)
+  // Space Complexity: O(1)
   insert(index, value) {
     if (index < 0 || index > this.length) return false;
 
@@ -171,6 +182,9 @@ class LinkedList {
 
     return this;
   }
-
 }
 ```
+
+
+
+
