@@ -22,14 +22,14 @@ class LinkedList {
   // Time Complexity: O(1)
   // Space Complexity: O(1)
   push(value) {
-    const newNode = new Node(value);
+    const node = new Node(value);
 
     if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
+      this.head = node;
+      this.tail = node;
     } else {
-      this.tail.next = newNode;
-      this.tail = newNode;
+      this.tail.next = node;
+      this.tail = node;
     }
 
     this.length++;
