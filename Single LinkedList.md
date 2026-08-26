@@ -64,14 +64,14 @@ class LinkedList {
   // Time Complexity: O(1)
   // Space Complexity: O(1)
   unshift(value) {
-    const newNode = new Node(value);
+    const node = new Node(value);
 
     if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
+      this.head = node;
+      this.tail = node;
     } else {
-      newNode.next = this.head;
-      this.head = newNode;
+      node.next = this.head;
+      this.head = node;
     }
 
     this.length++;
