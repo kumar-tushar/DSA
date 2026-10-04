@@ -38,7 +38,7 @@ class LinkedList {
     return this;
   }
 
-  // Time Complexity: O(n)
+  // Time Complexity: O(1)
   // Space Complexity: O(1)
   pop() {
     if (!this.head) return undefined;
