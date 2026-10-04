@@ -43,24 +43,19 @@ class LinkedList {
   pop() {
     if (!this.head) return undefined;
 
-    let current = this.head;
-    let prev = this.head;
+    const temp = this.tail;
 
-    while (current.next) {
-      prev = current;
-      current = current.next;
-    }
-
-    this.tail = prev;
-    this.tail.next = null;
-    this.length--;
-
-    if (this.length === 0) {
+    if (this.length === 1) {
       this.head = null;
       this.tail = null;
+    } else {
+      this.tail = temp.prev;
+      this.tail.next = null;
+      temp.prev = null;
     }
 
-    return current;
+     this.length--;
+     return temp;
   }
 
   // Time Complexity: O(1)
