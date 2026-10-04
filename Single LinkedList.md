@@ -36,30 +36,26 @@ class LinkedList {
     return this;
   }
 
-  // Time Complexity: O(n)
-  // Space Complexity: O(1)
-  pop() {
-    if (!this.head) return undefined;
+// Time Complexity: O(1)
+// Space Complexity: O(1)
+pop() {
+  if (!this.head) return undefined;
 
-    let current = this.head;
-    let prev = this.head;
+  const temp = this.tail;
 
-    while (current.next) {
-      prev = current;
-      current = current.next;
-    }
-
-    this.tail = prev;
+  if (this.length === 1) {
+    this.head = null;
+    this.tail = null;
+  } else {
+    this.tail = temp.prev;
     this.tail.next = null;
-    this.length--;
-
-    if (this.length === 0) {
-      this.head = null;
-      this.tail = null;
-    }
-
-    return current;
+    temp.prev = null;
   }
+
+  this.length--;
+
+  return temp;
+}
 
   // Time Complexity: O(1)
   // Space Complexity: O(1)
