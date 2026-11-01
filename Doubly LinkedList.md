@@ -58,19 +58,21 @@ class DoublyLinkedList {
   // Time Complexity: O(1)
   // Space Complexity: O(1)
   unshift(value) {
-    const node = new Node(value);
+    const node = new Node(value)
 
-    if (!this.head) {
-      this.head = node;
-      this.tail = node;
+    if (this.length === 0) {
+        this.head = node
+        this.tail = node
     } else {
-      node.next = this.head;
-      this.head = node;
-    }
+        node.next = this.head
+        this.head.prev = node
+        this.head = node
 
-    this.length++;
-    return this;
-  }
+    }
+    this.length++
+  
+    return this
+}
 
   // Time Complexity: O(1)
   // Space Complexity: O(1)
