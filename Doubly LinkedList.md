@@ -164,34 +164,19 @@ class DoublyLinkedList {
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
 
-    const prev = this.get(index - 1);
-    const removed = prev.next;
+    const temp = this.get(index);
 
-    prev.next = removed.next;
+    temp.prev.next = temp.next;
+    temp.next.prev = temp.prev;
+
+    temp.next = null;
+    temp.prev = null;
+
     this.length--;
 
-    return removed;
-  }
+    return temp;
+}
 
-  // Time Complexity: O(n)
-  // Space Complexity: O(1)
-  reverse() {
-    let temp = this.head;
-    this.head = this.tail;
-    this.tail = temp;
-
-    let next;
-    let prev = null;
-
-    for (let i = 0; i < this.length; i++) {
-      next = temp.next;
-      temp.next = prev;
-      prev = temp;
-      temp = next;
-    }
-
-    return this;
-  }
 }
 ```
 
