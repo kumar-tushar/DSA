@@ -158,6 +158,8 @@ class LinkedList {
         const removed = prev.next;
 
         prev.next = removed.next;
+        removed.next = null;
+
         this.length--;
 
         return removed;
