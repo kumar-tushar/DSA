@@ -134,24 +134,27 @@ class DoublyLinkedList {
     if (index < 0 || index > this.length) return false;
 
     if (index === 0) {
-      this.unshift(value);
-      return true;
+        this.unshift(value);
+        return true;
     }
 
     if (index === this.length) {
-      this.push(value);
-      return true;
+        this.push(value);
+        return true;
     }
 
-    const newNode = new Node(value);
+    const node = new Node(value);
     const prev = this.get(index - 1);
+    const next = prev.next;
 
-    newNode.next = prev.next;
-    prev.next = newNode;
+    prev.next = node;
+    node.next = next;
+    node.prev = prev;
+    next.prev = node;
 
     this.length++;
     return true;
-  }
+}
 
   // Time Complexity: O(n)
   // Space Complexity: O(1)
