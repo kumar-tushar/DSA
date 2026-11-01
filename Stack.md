@@ -3,8 +3,8 @@
 ```javascript
 class Node {
   constructor(value) {
-    this.value = value;
-    this.next = null;
+    this.value = value
+    this.next = null
   }
 }
 ```
@@ -16,7 +16,6 @@ class Stack {
     constructor() {
         this.top = null;
         this.length = 0
-
     }
 
     // Time Complexity: O(1)
@@ -30,7 +29,7 @@ class Stack {
             node.next = this.top
             this.top = node
         }
-        this.length++;
+        this.length++
         return this
 
     }
