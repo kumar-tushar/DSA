@@ -97,16 +97,25 @@ class DoublyLinkedList {
   // Time Complexity: O(n)
   // Space Complexity: O(1)
   get(index) {
-    if (index < 0 || index >= this.length) return null;
-
-    let temp = this.head;
-
-    for (let i = 0; i < index; i++) {
-      temp = temp.next;
+    if (index < 0 || index >= this.length) {
+        return undefined;
     }
 
+    let temp;
+  
+    if (index < this.length / 2) {
+        temp = this.head;
+        for (let i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+    } else {
+        temp = this.tail;
+        for (let i = this.length - 1; i > index; i--) {
+            temp = temp.prev;
+        }
+    }
     return temp;
-  }
+}
 
   // Time Complexity: O(n)
   // Space Complexity: O(1)
