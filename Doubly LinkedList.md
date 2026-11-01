@@ -13,7 +13,7 @@ class Node {
 ##### LinkedList
 
 ```javascript
-class LinkedList {
+class DoublyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
