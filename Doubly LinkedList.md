@@ -22,21 +22,20 @@ class LinkedList {
 
   // Time Complexity: O(1)
   // Space Complexity: O(1)
-  push(value) {
-    const node = new Node(value);
-
-    if (!this.head) {
-      this.head = node;
-      this.tail = node;
-    } else {
-      this.tail.next = node;
-      node.prev = this.tail;
-      this.tail = node;
+  push(value){
+        const node = new Node(value);
+        
+        if(!this.head){
+            this.head = node;
+            this.tail = node;
+        } else {
+            this.tail.next = node;
+            node.prev= this.tail;
+            this.tail = node;
+        }
+        this.length++;
+        return this;
     }
-
-    this.length++;
-    return this;
-  }
 
   // Time Complexity: O(1)
   // Space Complexity: O(1)
