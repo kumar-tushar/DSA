@@ -16,6 +16,7 @@ class Stack {
     constructor() {
         this.top = null;
         this.length = 0
+
     }
 
     // Time Complexity: O(1)
@@ -29,9 +30,21 @@ class Stack {
             node.next = this.top
             this.top = node
         }
-        this.length++
+        this.length++;
         return this
 
+    }
+
+    // Time Complexity: O(1)
+    // Space Complexity: O(1)
+    pop() {
+        if (this.length === 0) return undefined
+        const temp = this.top
+        this.top = this.top.next;
+        temp.next = null
+
+        this.length--
+        return temp
     }
 }
 ```
