@@ -40,20 +40,23 @@ class DoublyLinkedList {
   // Time Complexity: O(1)
   // Space Complexity: O(1)
   pop() {
-      if (this.length === 0) return undefined;
+    if (this.length === 0) return undefined;
 
-      const temp = this.tail;
-      this.tail = this.tail.prev;
-      this.tail.next = null;
-      temp.prev = null
-      this.lenght--;
+    const temp = this.tail;
 
-      if (this.length === 0) {
-          this.head = null;
-          this.tail = null;
-      }
-      return temp;
-  }
+    if (this.length === 1) {
+        this.head = null;
+        this.tail = null;
+    } else {
+        this.tail = temp.prev;
+        this.tail.next = null;
+        temp.prev = null;
+    }
+
+    this.length--;
+
+    return temp;
+}
 
   // Time Complexity: O(1)
   // Space Complexity: O(1)
