@@ -8,3 +8,15 @@ class Node {
   }
 }
 ```
+
+##### LinkedList
+
+```javascript
+class Stack{
+    constructor(){
+        this.top = null;
+        this.length = 0
+        
+    }
+}
+```
