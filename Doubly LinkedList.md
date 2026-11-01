@@ -52,9 +52,7 @@ class DoublyLinkedList {
           this.head = null;
           this.tail = null;
       }
-
       return temp;
-
   }
 
   // Time Complexity: O(1)
